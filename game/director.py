@@ -42,8 +42,6 @@ class Director:
             self (Director): An instance of Director.
         """
       
-        # guess = input("Do you think the next card will be higher or lower? [h/l] ")
-
         play_again = input('Keep playin HiLo? [y/n] ')
         self.is_playing = (play_again == "y")
        
@@ -60,16 +58,18 @@ class Director:
         card.card_flip()
         print(f'The first card is {card.value1}. ')
         guess = input('Do you think the next card will be higher or lower? [h/l] ')
-        print(f'The second cared is {card.value2}.')
+        print(f'The second card is {card.value2}.')
 
         if guess == card.hilo:
             correct_guess = 'y'
+            print('You guessed correctly! Have 100 points.')
             points = 100
         else:
             correct_guess = 'n'    
+            print('That guess was incorrect. Lose 75 points.')
             points = (-75)        
-        print(card.hilo)
-        print(correct_guess)
+        # print(card.hilo)
+        # print(correct_guess)
 
         # points = 100 if correct_guess == 'y'  else (-75) if correct_guess == 'n' else 0
 
